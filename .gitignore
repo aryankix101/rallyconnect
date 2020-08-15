@@ -4,4 +4,3 @@ virtual
 .venv
 env/
 venv/
-site.db
