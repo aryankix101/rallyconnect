@@ -162,3 +162,7 @@ def like_action(post_id, action):
         current_user.unlike_post(post)
         db.session.commit()
     return redirect(request.referrer)
+
+@app.route('/comingsoon')
+def comingsoon():
+    return render_template("comingsoon.html")
