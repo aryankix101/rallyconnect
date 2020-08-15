@@ -118,12 +118,24 @@ def update_post(post_id):
     if form.validate_on_submit():
         post.title = form.title.data
         post.content = form.content.data
+        post.street_address = form.street_address.data
+        post.city = form.city.data
+        post.state = form.state.data
+        post.date = form.date.data
+        post.time = form.time.data
+        post.content = form.content.data
         db.session.commit()
         flash('Your post has been updated!', 'success')
         return redirect(url_for('post', post_id=post.id))
     elif request.method == 'GET':
-        form.title.data = post.title
-        form.content.data = post.content
+        post.title = form.title.data
+        post.content = form.content.data
+        post.street_address = form.street_address.data
+        post.city = form.city.data
+        post.state = form.state.data
+        post.date = form.date.data
+        post.time = form.time.data
+        post.content = form.content.data
     return render_template('create_protest.html', title='Update Post',
                            form=form, legend='Update Post')
 
