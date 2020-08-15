@@ -15,6 +15,7 @@
       </div>
       <h2 class="article-title">{{ post.title }}</h2>
       <p class="article-content">{{ post.content }}</p>
+      <p class="article-content">{{ post.street_address + " " + post.city + " " + post.state }} </p>
     </div>
   </article>
   <!-- Modal -->
@@ -37,10 +38,27 @@
     </div>
   </div>
   <iframe
+    id="map"
     width="600"
     height="450"
     frameborder="0" style="border:0"
     src="https://www.google.com/maps/embed/v1/place?key=AIzaSyC6Sns4_9ePgcyjZVcigA5X7sMaaKcSawg
-      &q=Space+Needle,Seattle+WA" allowfullscreen>
+      &q=13601+Yellow+Poplar+Drive,Centreville,VA" allowfullscreen>
   </iframe>
+
+  <script>
+    let street = "{{ post.street_address }}";
+    street = street.split(" ");
+    let finalStreet = "";
+    for (var i = 0; i < street.length-1;i++)
+    {
+      finalStreet += street[i] + "+";
+    }
+    finalStreet += street[street.length-1]
+    let city = "{{ post.city }}"
+    let state = "{{ post.state }}"
+    var iframe = document.getElementById("map");
+    iframe.src = "https://www.google.com/maps/embed/v1/place?key=AIzaSyC6Sns4_9ePgcyjZVcigA5X7sMaaKcSawg&q=" + finalStreet + "," + city + "," + state;
+
+  </script>
 {% endblock content %}
