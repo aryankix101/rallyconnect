@@ -1,0 +1,48 @@
+{% extends "layout2.html" %}
+
+  <!-- Page Content -->
+        {% block content %}
+        <header class="masthead" style="background-color: #007bff;">
+          <div class="container h-100" >
+            <div class="row h-100 align-items-center">
+              <div class="col-12 text-center">
+                <h1 class="display-1" style="color: white;">Find Protests</h2>
+              </div>
+            </div>
+          </div>
+        </header>
+          {% for post in posts.items %}
+            <article class="media content-section">
+              <img class="rounded-circle article-img" src="{{ url_for('static', filename='profile_pics/' + post.author.image_file) }}">
+              <div class="media-body">
+                <div class="article-metadata">
+                  <a class="mr-2" href="{{ url_for('account')}}">{{ post.author.username }}</a>
+                </div>
+                <h2><a class="article-title" href="{{ url_for('post', post_id=post.id) }}">{{ post.title }}</a></h2>
+                <p class="article-content"><u>Date of Event:</u> {{ post.date }}</p>
+                <p class="article-content"><u>Time of Event:</u> {{ post.time }}</p>
+                <p class="article-content"><u>Address:</u> {{ post.street_address + ' ' + post.city + ' ' + post.state }}</p>
+                <p class="article-content"><u>Description:</u> {{ post.content }}</p>
+                {% if current_user.is_authenticated %}
+                  {% if current_user.has_liked_post(post) %}
+                    <a href="{{ url_for('like_action', post_id=post.id, action='unlike') }}">Unattend</a>
+                  {% else %}
+                    <a href="{{ url_for('like_action', post_id=post.id, action='like') }}">Going!</a>
+                  {% endif %}
+                {% endif %}
+                <strong>{{ post.likes.count() }} going</strong>
+              </div>
+            </article>
+          {% endfor %}
+          {% for page_num in posts.iter_pages(left_edge=1, right_edge=1, left_current=1, right_current=2) %}
+            {% if page_num %}
+              {% if posts.page == page_num %}
+                <a class="btn btn-primary mb-4 ml-4" href="{{ url_for('protest', page=page_num) }}">{{ page_num }}</a>
+              {% else %}
+                <a class="btn btn-outline-primary mb-4 ml-4" href="{{ url_for('protest', page=page_num) }}">{{ page_num }}</a>
+              {% endif %}
+            {% else %}
+              ...
+            {% endif %}
+        {% endfor %}
+        {% endblock content %}

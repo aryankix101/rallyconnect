@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+  <title>ProtestFind</title>
+  <meta content="" name="descriptison">
+  <meta content="" name="keywords">
+
+  <!-- Favicons -->
+  <link href="static/img/favicon.ico" rel="icon">
+  <link href="static/img/apple-touch-icon.png" rel="apple-touch-icon">
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Roboto:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="static/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="static/vendor/icofont/icofont.min.css" rel="stylesheet">
+  <link href="static/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+  <link href="static/vendor/owl.carousel/static/owl.carousel.min.css" rel="stylesheet">
+  <link href="static/vendor/venobox/venobox.css" rel="stylesheet">
+  <link href="static/vendor/aos/aos.css" rel="stylesheet">
+
+  <!-- Template Main CSS File -->
+  <link href="static/css/style.css" rel="stylesheet">
+
+  <!-- =======================================================
+  * Template Name: BizLand - v1.0.1
+  * Template URL: https://bootstrapmade.com/bizland-bootstrap-business-template/
+  * Author: BootstrapMade.com
+  * License: https://bootstrapmade.com/license/
+  ======================================================== -->
+</head>
+
+<body>
+
+  <!-- ======= Top Bar ======= -->
+  
+
+  <!-- ======= Header ======= -->
+  <header id="header" >
+    <div class="container d-flex align-items-center">
+
+      <h1 class="logo mr-auto"><a href="{{ url_for('home') }}">ProtestFind<span>.</span></a></h1>
+      <!-- Uncomment below if you prefer to use an image logo -->
+      <a href="{{ url_for('home') }}" class="logo mr-auto"><img src="static/img/logo.png" alt=""></a>
+      
+
+      <nav class="nav-menu d-none d-lg-block">
+        <ul>
+          {% if current_user.is_authenticated %}
+          <li class="active"><a href="{{ url_for('home') }}">Home</a></li>
+          <li><a href="home#about">About</a></li>
+          <li><a href="home#services">Get Involved</a></li>
+          <li><a href="home#faq">FAQs</a></li>
+          <li><a href="home#contact">Contact</a></li>
+          <li class="drop-down"><a href="">Protests</a>
+            <ul>
+              <li><a href="{{ url_for('new_post') }}">Create a Protest</a></li>
+              <li><a href="{{ url_for('protest') }}">Find Protests</a></li>
+            </ul>
+          </li>
+          <li><a href="{{ url_for('account') }}">Account</a></li>
+          <li><a href="{{ url_for('logout') }}">Logout</a></li>
+          {% else %}
+          <li class="active"><a href="{{ url_for('home') }}">Home</a></li>
+          <li><a href="home#about">About</a></li>
+          <li><a href="home#services">Get Involved</a></li>
+          <li><a href="home#faq">FAQs</a></li>
+          <li><a href="home#contact">Contact</a></li>
+          <li class="drop-down"><a href="">Protests</a>
+            <ul>
+              <li><a href="{{ url_for('new_post') }}">Create a Protest</a></li>
+              <li><a href="{{ url_for('protest') }}">Find Protests</a></li>
+            </ul>
+          </li>
+          <li><a href="{{ url_for('login') }}">Login</a></li>
+          <li><a href="{{ url_for('register') }}">Register</a></li>          
+          {% endif %}
+        </ul>
+      </nav><!-- .nav-menu -->
+
+    </div>
+  </header><!-- End Header -->
+
+  
+
+  </main><!-- End #main -->
+  {% block content %}{% endblock %}
+
+  <!-- ======= Footer ======= -->
+  <footer id="footer">
+
+    <div class="footer-top">
+      <div class="container">
+        <div class="row">
+
+          <div class="col-lg-3 col-md-6 footer-contact">
+            <h3>ProtestFind<span>.</span></h3>
+            <p>
+               Make Change Now.<br>
+              <br>
+              Developed by <i>Aryan Kumawat</i> and <I>Trishal Muthan</i>
+              <br>
+              <br>
+              <strong>Email:</strong> protestfind@gmail.com<br>
+            </p>
+          </div>
+
+          <div class="col-lg-3 col-md-6 footer-links">
+            <h4>Useful Links</h4>
+            <ul>
+              <li><i class="bx bx-chevron-right"></i> <a href="{{ url_for('home') }}">Home</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="home#about">About Us</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="{{ url_for('new_post') }}">Create a Protest</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="{{ url_for('protest') }}">Find a Protest</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="home#contact">Contact Us</a></li>
+            </ul>
+          </div>
+
+          <div class="col-lg-3 col-md-6 footer-links">
+            <h4>About Protests</h4>
+            <ul>
+              <li><i class="bx bx-chevron-right"></i> <a href="https://www.theatlantic.com/technology/archive/2020/06/why-protests-work/613420/">Why Protest?</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="https://www.history.com/tag/protests">The History of Protests</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="https://www.aclu.org/know-your-rights/protesters-rights/">Know your Rights</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="https://www.livescience.com/16153-10-significant-political-protests.html">13 Significant Protests</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="https://www.youtube.com/watch?v=OIpgrZ8yS-Q">Nonviolent Resistance</a></li>
+            </ul>
+          </div>
+
+          <div class="col-lg-3 col-md-6 footer-links">
+            <h4>Our Social Networks</h4>
+            <p>Coming Soon...</p>
+            <div class="social-links mt-3">
+              <a href="#" class="twitter"><i class="bx bxl-twitter"></i></a>
+              <a href="#" class="facebook"><i class="bx bxl-facebook"></i></a>
+              <a href="#" class="instagram"><i class="bx bxl-instagram"></i></a>
+              <a href="#" class="linkedin"><i class="bx bxl-linkedin"></i></a>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <div class="container py-4">
+      <div class="copyright">
+        &copy; Copyright <strong><span>ProtestFind</span></strong>. All Rights Reserved
+      </div>
+      <div class="credits">
+        <!-- All the links in the footer should remain intact. -->
+        <!-- You can delete the links only if you purchased the pro version. -->
+        <!-- Licensing information: https://bootstrapmade.com/license/ -->
+        <!-- Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/bizland-bootstrap-business-template/ -->
+        Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a>
+      </div>
+    </div>
+  </footer><!-- End Footer -->
+
+  <div id="preloader"></div>
+  <a href="#" class="back-to-top"><i class="icofont-simple-up"></i></a>
+
+  <!-- Vendor JS Files -->
+  <script src="static/vendor/jquery/jquery.min.js"></script>
+  <script src="static/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="static/vendor/jquery.easing/jquery.easing.min.js"></script>
+  <script src="static/vendor/php-email-form/validate.js"></script>
+  <script src="static/vendor/waypoints/jquery.waypoints.min.js"></script>
+  <script src="static/vendor/counterup/counterup.min.js"></script>
+  <script src="static/vendor/owl.carousel/owl.carousel.min.js"></script>
+  <script src="static/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+  <script src="static/vendor/venobox/venobox.min.js"></script>
+  <script src="static/vendor/aos/aos.js"></script>
+
+  <!-- Template Main JS File -->
+  <script src="static/js/main.js"></script>
+
+</body>
+
+</html>

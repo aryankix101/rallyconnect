@@ -1,0 +1,338 @@
+{% extends "layout.html" %}
+{% block content %}
+<!-- ======= Hero Section ======= -->
+<section id="hero" class="d-flex align-items-center">
+    <div class="container" data-aos="zoom-out" data-aos-delay="100">
+      <h1>Welcome to <span>ProtestFind</spa>
+      </h1>
+      <h2>Make Change Now.</h2>
+      <div class="d-flex">
+        {% if current_user.is_authenticated %}
+          <a href="#about" class="btn-get-started scrollto">About Us!</a>
+        {% else %}
+          <a href="{{url_for('register')}}" class="btn-get-started scrollto">Register Now</a>
+        {% endif %}
+        <a href="https://www.youtube.com/watch?v=5NDXOMXY90Y" class="venobox btn-watch-video" data-vbtype="video" data-autoplay="true"> Watch Video <i class="icofont-play-alt-2"></i></a>
+      </div>
+    </div>
+  </section><!-- End Hero -->
+
+  <main id="main">
+
+    <!-- ======= Featured Services Section ======= -->
+    <section id="featured-services" class="featured-services">
+      <div class="container" data-aos="fade-up">
+
+        <div class="row">
+          <div class="col-md-6 col-lg-3 d-flex align-items-stretch mb-5 mb-lg-0">
+            <div class="icon-box" data-aos="fade-up" data-aos-delay="100">
+              <div class="icon"><i class="bx bx-group"></i></div>
+              <h4 class="title"><a href="#about">What are we about?</a></h4>
+              <p class="description">Learn more about ProtestFind.</p>
+            </div>
+          </div>
+
+          <div class="col-md-6 col-lg-3 d-flex align-items-stretch mb-5 mb-lg-0">
+            <div class="icon-box" data-aos="fade-up" data-aos-delay="200">
+              <div class="icon"><i class="bx bx-message-rounded-error"></i></div>
+              <h4 class="title"><a href="#services">Make a Difference</a></h4>
+              <p class="description">There are many ways you can get involved.</p>
+            </div>
+          </div>
+
+          <div class="col-md-6 col-lg-3 d-flex align-items-stretch mb-5 mb-lg-0">
+            <div class="icon-box" data-aos="fade-up" data-aos-delay="300">
+              <div class="icon"><i class="bx bx-file"></i></div>
+              <h4 class="title"><a href="{{ url_for('new_post') }}">Create a Protest</a></h4>
+              <p class="description">Organize a protest near you today!</p>
+            </div>
+          </div>
+
+          <div class="col-md-6 col-lg-3 d-flex align-items-stretch mb-5 mb-lg-0">
+            <div class="icon-box" data-aos="fade-up" data-aos-delay="400">
+              <div class="icon"><i class="bx bx-world"></i></div>
+              <h4 class="title"><a href="{{ url_for('protest') }}">Find a Protest</a></h4>
+              <p class="description">Find a protest near you today!</p>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section><!-- End Featured Services Section -->
+
+    <!-- ======= About Section ======= -->
+    <section id="about" class="about section-bg">
+      <div class="container" data-aos="fade-up">
+
+        <div class="section-title">
+          <h2>About</h2>
+          <h3>About <span>ProtestFind</span></h3>
+          <p>Here at ProtestFind, you can find or create protests around the country regarding any type of social change.</p>
+        </div>
+
+        <div class="row">
+          <div class="col-lg-6" data-aos="zoom-out" data-aos-delay="100">
+            <img src="static/img/about_protest.jpg" class="img-fluid" alt="">
+          </div>
+          <div class="col-lg-6 pt-4 pt-lg-0 content d-flex flex-column justify-content-center" data-aos="fade-up" data-aos-delay="100">
+            <h3>In the wake of the death of George Floyd, the United States faces the incarnation of a civil rights movement, hundreds of years in the making. </h3>
+            <p class="font-italic">
+              Hence, it has become important more than ever for change. Change not only in civil rights, but change in all aspects of society. This is the inspiration for ProtestFind.
+            </p>
+            <ul>
+              <li>
+                <i class="bx bx-map"></i>
+                <div>
+                  <h5>ProtestFind is an online service that allows people to create and join protests throughout the country.</h5>
+                  <p>This helps people organize and communicate easier with regards to holding rallies or protests.</p>
+                </div>
+              </li>
+              <li>
+                <i class="bx bx-happy-beaming "></i>
+                <div>
+                  <h5>Once your account is created, you are able to create and join protests.</h5>
+                  <p>You may create a new protest by providing a location or join a protest by finding a location near you and mark yourself as going.</p>
+                </div>
+              </li>
+            </ul>
+            <p>
+              We are currently live in one of the darker times in our country’s history. By using ProtestFind and effectively organizing peaceful protests, we will be one big step closer to causing real change. And we are long due for some change.
+            </p>
+          </div>
+        </div>
+
+      </div>
+    </section><!-- End About Section -->
+
+    <!-- ======= Skills Section ======= -->
+    <section id="skills" class="skills">
+      <div class="container" data-aos="fade-up">
+
+        
+
+      </div>
+    </section><!-- End Skills Section -->
+
+    <!-- ======= Counts Section ======= -->
+    <section id="counts" class="counts">
+      <div class="container" data-aos="fade-up">
+
+        <div class="row">
+
+          <div class="col-lg-3 col-md-6">
+            <div class="count-box">
+              <i class="icofont-simple-smile"></i>
+              <span data-toggle="counter-up">232</span>
+              <p>Happy Users</p>
+            </div>
+          </div>
+
+          <div class="col-lg-3 col-md-6 mt-5 mt-md-0">
+            <div class="count-box">
+              <i class="icofont-users-social"></i>
+              <span data-toggle="counter-up">521</span>
+              <p>Protests</p>
+            </div>
+          </div>
+
+          <div class="col-lg-3 col-md-6 mt-5 mt-lg-0">
+            <div class="count-box">
+              <i class="icofont-clock-time"></i>
+              <span data-toggle="counter-up">1,463</span>
+              <p>Hours Of Protests</p>
+            </div>
+          </div>
+
+          <div class="col-lg-3 col-md-6 mt-5 mt-lg-0">
+            <div class="count-box">
+              <i class="icofont-business-man"></i>
+              <span data-toggle="counter-up">2</span>
+              <p>Hard Workers</p>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section><!-- End Counts Section -->
+
+    
+
+    <!-- ======= Services Section ======= -->
+    <section id="services" class="services">
+      <div class="container" data-aos="fade-up">
+
+        <div class="section-title">
+          <h2>Info</h2>
+          <h3>Get <span>Involved</span></h3>
+          <p>Here is some more useful information to help enact change.</p>
+        </div>
+
+        <div class="row">
+          <div class="col-lg-4 col-md-6 d-flex align-items-stretch" data-aos="zoom-in" data-aos-delay="100">
+            <div class="icon-box">
+              <div class="icon"><i class="bx bx-money"></i></div>
+              <h4><a href="https://www.google.com/search?sxsrf=ALeKk00SpOFd6e1IJtoLfE6X7xIcp7JEmg%3A1594836015171&source=hp&ei=L0QPX_7RBtmvytMP_ZqSoAM&q=donate&oq=donate&gs_lcp=CgZwc3ktYWIQAzIECCMQJzIFCAAQsQMyBQguELEDMgIIADIECAAQQzICCAAyCAgAELEDEIMBMgcIABCxAxBDMgQIABBDMgUIABCxAzoKCC4QxwEQowIQQzoLCC4QsQMQxwEQowI6AgguOgUIABCRAjoKCAAQsQMQFBCHAjoICC4QsQMQgwE6CAguEMcBEKMCOgcIIxDqAhAnOgQILhAnOgQILhBDOgcIABAUEIcCUIEHWNMfYNEgaAZwAHgAgAF4iAGuCJIBBDEwLjKYAQCgAQGqAQdnd3Mtd2l6sAEK&sclient=psy-ab&ved=0ahUKEwi-pZ-R68_qAhXZl3IEHX2NBDQQ4dUDCAk&uact=5">Donate</a></h4>
+              <p>You can donate to many wonderful organizations promising for social change.</p>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4 mt-md-0" data-aos="zoom-in" data-aos-delay="200">
+            <div class="icon-box">
+              <div class="icon"><i class="bx bx-edit"></i></div>
+              <h4><a href="https://www.usa.gov/register-to-vote">Register to Vote</a></h4>
+              <p>You can make a difference by voting. Learn more about registering to vote with the link above.</p>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4 mt-lg-0" data-aos="zoom-in" data-aos-delay="300">
+            <div class="icon-box">
+              <div class="icon"><i class="bx bx-file"></i></div>
+              <h4><a href="https://www.change.org/petitions">Sign or Create Petitions</a></h4>
+              <p>By creating, or even signing a petition, you are participating in social change and helping what you believe in come true.</p>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section><!-- End Services Section -->
+
+    <!-- ======= Testimonials Section ======= -->
+    
+
+    <!-- ======= Frequently Asked Questions Section ======= -->
+    <section id="faq" class="faq section-bg">
+      <div class="container" data-aos="fade-up">
+
+        <div class="section-title">
+          <h2>F.A.Q</h2>
+          <h3>Frequently Asked <span>Questions</span></h3>
+        </div>
+
+        <ul class="faq-list" data-aos="fade-up" data-aos-delay="100">
+
+          <li>
+            <a data-toggle="collapse" class="" href="#faq1">How do I create a protest?<i class="icofont-simple-up"></i></a>
+            <div id="faq1" class="collapse show" data-parent=".faq-list">
+              <p>
+                To create a protest, you first must have an account with ProtestFind. If you do not have an account, navigate to the Register page and create an account, 
+                then proceed to logging. If you already have an account, you may simply log in. Then navigate to the Create Protest page by clicking into the Protest dropdown. 
+                You may then input all information about the protest and create the protest once you are finished. Ta Da! Your protest has been created!
+              </p>
+            </div>
+          </li>
+
+          <li>
+            <a data-toggle="collapse" href="#faq2" class="collapsed">How do I join a protest?<i class="icofont-simple-up"></i></a>
+            <div id="faq2" class="collapse" data-parent=".faq-list">
+              <p>
+                To join a protest, you first must have an account with ProtestFind. If you do not have an account, navigate to the Register page and create an account, 
+                then proceed to logging. If you already have an account, you may simply log in. Then navigate to the Join Protest page by clicking into the Protest dropdown. 
+                You may then find a protest you want to join, and click the Going! button. Ta Da! You have joined a protest!
+              </p>
+            </div>
+          </li>
+
+          <li>
+            <a data-toggle="collapse" href="#faq3" class="collapsed">How can I update my account information? <i class="icofont-simple-up"></i></a>
+            <div id="faq3" class="collapse" data-parent=".faq-list">
+              <p>
+                To change your account info, you must have an account and be logged in. Once you are logged in, navigate to the Account page. There, you can change
+                your email and username. Once you have changed your username and/or your email, click the update button to save your information.
+              </p>
+            </div>
+          </li>
+
+          <li>
+            <a data-toggle="collapse" href="#faq4" class="collapsed">How can I update my profile picture? <i class="icofont-simple-up"></i></a>
+            <div id="faq4" class="collapse" data-parent=".faq-list">
+              <p>
+                To change your profile picture, you must have an account and be logged in. Once you are logged in, navigate to the Account page. There, you can click the choose file button
+                and upload a file from your computer to be your new picture. Once you have changed your profile picture, click the update button to save your new picture.
+              </p>
+            </div>
+          </li>
+
+          <li>
+            <a data-toggle="collapse" href="#faq5" class="collapsed">How else can I make a difference? <i class="icofont-simple-up"></i></a>
+            <div id="faq5" class="collapse" data-parent=".faq-list">
+              <p>
+                Click to find more ways that you can make a difference! --> <a href="/home#services">Get Involved!</a> 
+              </p>
+            </div>
+          </li>
+
+          <li>
+            <a data-toggle="collapse" href="#faq6" class="collapsed">How can I contact the ProtestFind team? <i class="icofont-simple-up"></i></a>
+            <div id="faq6" class="collapse" data-parent=".faq-list">
+              <p>
+                You can send an email to protestfind@gmail.com with any questions or comments that you have!
+              </p>
+            </div>
+          </li>
+
+        </ul>
+
+      </div>
+    </section><!-- End Frequently Asked Questions Section -->
+
+    <!-- ======= Contact Section ======= -->
+    <section id="contact" class="contact">
+      <div class="container" data-aos="fade-up">
+
+        <div class="section-title">
+          <h2>Contact</h2>
+          <h3><span>Contact Us</span></h3>
+          <p>Shoot us an email if you are interested in learning more about what we are about or joining our team!</p>
+        </div>
+
+          <div class="col-sm">
+            <div class="info-box mb-4">
+              <i class="bx bx-envelope"></i>
+              <h3>Email Us</h3>
+              <p>protestfind@gmail.com</p>
+            </div>
+          </div>
+
+          
+
+        </div>
+
+        <div class="row" data-aos="fade-up" data-aos-delay="100">
+
+          <div class="col-sm d-flex justify-content-center">
+            <form action="forms/contact.php" method="post" role="form" class="php-email-form">
+              <div class="form-row">
+                <div class="col form-group">
+                  <input type="text" name="name" class="form-control" id="name" placeholder="Your Name" data-rule="minlen:4" data-msg="Please enter at least 4 chars" />
+                  <div class="validate"></div>
+                </div>
+                <div class="col form-group">
+                  <input type="email" class="form-control" name="email" id="email" placeholder="Your Email" data-rule="email" data-msg="Please enter a valid email" />
+                  <div class="validate"></div>
+                </div>
+              </div>
+              <div class="form-group">
+                <input type="text" class="form-control" name="subject" id="subject" placeholder="Subject" data-rule="minlen:4" data-msg="Please enter at least 8 chars of subject" />
+                <div class="validate"></div>
+              </div>
+              <div class="form-group">
+                <textarea class="form-control" name="message" rows="5" data-rule="required" data-msg="Please write something for us" placeholder="Message"></textarea>
+                <div class="validate"></div>
+              </div>
+              <div class="mb-3">
+                <div class="loading">Loading</div>
+                <div class="error-message"></div>
+                <div class="sent-message">Your message has been sent. Thank you!</div>
+              </div>
+              <div class="text-center"><button type="submit">Send Message</button></div>
+            </form>
+          </div>
+
+        </div>
+
+      </div>
+    </section><!-- End Contact Section -->
+{% endblock content %}

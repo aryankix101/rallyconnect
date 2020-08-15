@@ -1,0 +1,51 @@
+<head>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+<link href="static/css/register.css" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-10 col-xl-9 mx-auto">
+          <div class="card card-signin flex-row my-5">
+            <div class="card-img-left d-none d-md-flex">
+               <!-- Background image for card set in CSS! -->
+            </div>
+            <form method="POST" action="">
+                {{ form.hidden_tag() }}
+                <div class="card-body">
+                <h5 class="card-title text-center">Register</h5>
+                <form class="form-signin">
+                    <div class="form-label-group">
+                    {{form.username(class="form-control")}}
+                    <label for="inputUserame">Username</label>
+                    </div>
+    
+                    <div class="form-label-group">
+                    {{form.email(class="form-control")}}
+                    <label for="inputEmail">Email address</label>
+                    </div>
+                    
+                    <hr>
+    
+                    <div class="form-label-group">
+                    {{form.password(class="form-control")}}
+                    <label for="inputPassword">Password</label>
+                    </div>
+                    
+                    <div class="form-label-group">
+                    {{form.confirm_password(class="form-control")}}
+                    <label for="inputConfirmPassword">Confirm password</label>
+                    </div>
+                    
+                    {{ form.submit(class="btn btn-lg btn-primary btn-block")}}
+                    <a class="d-block text-center mt-2 small" href="{{url_for('login')}}">Sign In</a>
+                    <hr class="my-4">
+                    <a id="fixedbutton" href="{{url_for('home')}}" style="color:black"><strong>Back</strong></a>
+                </form>
+                </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
