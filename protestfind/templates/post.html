@@ -15,6 +15,7 @@
       </div>
       <h2 class="article-title">{{ post.title }}</h2>
       <p class="article-content">{{ post.content }}</p>
+      <p class="article-content">{{ post.street_address + " " + post.city + " " + post.state }} </p>
     </div>
   </article>
   <!-- Modal -->
@@ -36,4 +37,27 @@
       </div>
     </div>
   </div>
+  <iframe
+    id="map"
+    width="100%"
+    height="451"
+    frameborder="0" style="border:0px"
+    src="" allowfullscreen>
+  </iframe>
+
+  <script>
+    let street = "{{ post.street_address }}";
+    street = street.split(" ");
+    let finalStreet = "";
+    for (var i = 0; i < street.length-1;i++)
+    {
+      finalStreet += street[i] + "+";
+    }
+    finalStreet += street[street.length-1]
+    let city = "{{ post.city }}"
+    let state = "{{ post.state }}"
+    var iframe = document.getElementById("map");
+    iframe.src = "https://www.google.com/maps/embed/v1/place?key=AIzaSyC6Sns4_9ePgcyjZVcigA5X7sMaaKcSawg&q=" + finalStreet + "," + city + "," + state;
+
+  </script>
 {% endblock content %}
