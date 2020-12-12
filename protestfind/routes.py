@@ -100,7 +100,7 @@ def new_post():
         flash('Your protest has been posted!', 'success')
         return redirect(url_for('protest'))
     return render_template('create_protest.html', title='New Protest',
-                           form=form, legend='New Protest')
+                           form=form, legend='New Rally')
 
 @app.route("/post<int:post_id>")
 def post(post_id):

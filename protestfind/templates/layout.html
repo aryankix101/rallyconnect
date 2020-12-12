@@ -5,7 +5,7 @@
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
-  <title>ProtestFind</title>
+  <title>RallyConnect</title>
   <meta content="" name="descriptison">
   <meta content="" name="keywords">
 
@@ -31,7 +31,7 @@
   <div id="topbar" class="d-none d-lg-flex align-items-center fixed-top">
     <div class="container d-flex">
       <div class="contact-info mr-auto">
-        <i class="icofont-envelope"></i> <a href="mailto:protestfind@gmail.com">team@protestfind.com</a>
+        <i class="icofont-envelope"></i> <a href="mailto:rallyconnect@gmail.com">rallyconnect@gmail.com</a>
       </div>
       <div class="social-links">
         <a href="{{ url_for('comingsoon') }}" class="twitter"><i class="icofont-twitter"></i></a>
@@ -46,7 +46,7 @@
   <header id="header" class="fixed-top">
     <div class="container d-flex align-items-center">
 
-      <h1 class="logo mr-auto"><a href="{{ url_for('home') }}">ProtestFind<span>.</span></a></h1>
+      <h1 class="logo mr-auto"><a href="{{ url_for('home') }}">RallyConnect<span>.</span></a></h1>
       <a href="{{ url_for('home') }}" class="logo mr-auto"><img src="static/img/logo.png" alt=""></a>
       
 
@@ -58,10 +58,10 @@
           <li><a href="#services">Get Involved</a></li>
           <li><a href="#faq">FAQs</a></li>
           <li><a href="#contact">Contact</a></li>
-          <li class="drop-down"><a href="">Protests</a>
+          <li class="drop-down"><a href="">Rallies</a>
             <ul>
-              <li><a href="{{ url_for('new_post') }}">Create a Protest</a></li>
-              <li><a href="{{ url_for('protest') }}">Find Protests</a></li>
+              <li><a href="{{ url_for('new_post') }}">Create a Rally</a></li>
+              <li><a href="{{ url_for('protest') }}">Find Rallies</a></li>
             </ul>
           </li>
           <li><a href="{{ url_for('account') }}">Account</a></li>
@@ -72,10 +72,10 @@
           <li><a href="#services">Get Involved</a></li>
           <li><a href="#faq">FAQs</a></li>
           <li><a href="#contact">Contact</a></li>
-          <li class="drop-down"><a href="">Protests</a>
+          <li class="drop-down"><a href="">Rallies</a>
             <ul>
-              <li><a href="{{ url_for('new_post') }}">Create a Protest</a></li>
-              <li><a href="{{ url_for('protest') }}">Find Protests</a></li>
+              <li><a href="{{ url_for('new_post') }}">Create a Rally</a></li>
+              <li><a href="{{ url_for('protest') }}">Find Rallies</a></li>
             </ul>
           </li>
           <li><a href="{{ url_for('login') }}">Login</a></li>
@@ -100,14 +100,14 @@
         <div class="row">
 
           <div class="col-lg-3 col-md-6 footer-contact">
-            <h3>ProtestFind<span>.</span></h3>
+            <h3>RallyConnect<span>.</span></h3>
             <p>
                Make Change Now.<br>
               <br>
-              Developed by <i>Aryan Kumawat</i> and <I>Trishal Muthan</i>
+              Developed by <I>Trishal Muthan</i>, <I>Aryan Kumawat</i>, <I>Vibhav Kuriti</i>, and <I>Dan Nguyen</i>
               <br>
               <br>
-              <strong>Email:</strong> team@protestfind.com<br>
+              <strong>Email:</strong> rallyconnect@gmail.com<br>
             </p>
           </div>
 
@@ -116,43 +116,37 @@
             <ul>
               <li><i class="bx bx-chevron-right"></i> <a href="{{ url_for('home') }}">Home</a></li>
               <li><i class="bx bx-chevron-right"></i> <a href="#about">About Us</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="{{ url_for('new_post') }}">Create a Protest</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="{{ url_for('protest') }}">Find a Protest</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="{{ url_for('new_post') }}">Create a Rally</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="{{ url_for('protest') }}">Find a Rally</a></li>
               <li><i class="bx bx-chevron-right"></i> <a href="#contact">Contact Us</a></li>
             </ul>
           </div>
 
           <div class="col-lg-3 col-md-6 footer-links">
-            <h4>About Protests</h4>
+            <h4>About Rallies and Protests</h4>
             <ul>
               <li><i class="bx bx-chevron-right"></i> <a href="https://www.theatlantic.com/technology/archive/2020/06/why-protests-work/613420/">Why Protest?</a></li>
               <li><i class="bx bx-chevron-right"></i> <a href="https://www.history.com/tag/protests">The History of Protests</a></li>
               <li><i class="bx bx-chevron-right"></i> <a href="https://www.aclu.org/know-your-rights/protesters-rights/">Know your Rights</a></li>
               <li><i class="bx bx-chevron-right"></i> <a href="https://www.livescience.com/16153-10-significant-political-protests.html">13 Significant Protests</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="https://www.youtube.com/watch?v=OIpgrZ8yS-Q">Nonviolent Resistance</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="https://www.youtube.com/watch?v=OIpgrZ8yS-Q">Nonviolent Reform</a></li>
             </ul>
           </div>
 
           <div class="col-lg-3 col-md-6 footer-links">
-            <h4>Our Social Networks</h4>
-            <p>Coming Soon...</p>
-            <div class="social-links mt-3">
-              <a href="{{ url_for('comingsoon') }}" class="twitter"><i class="bx bxl-twitter"></i></a>
-              <a href="{{ url_for('comingsoon') }}" class="facebook"><i class="bx bxl-facebook"></i></a>
-              <a href="{{ url_for('comingsoon') }}" class="instagram"><i class="bx bxl-instagram"></i></a>
-              <a href="{{ url_for('comingsoon') }}" class="linkedin"><i class="bx bxl-linkedin"></i></a>
-            </div>
+            <h4>Staying Safe</h4>
+            <ul>
+              <li><i class="bx bx-chevron-right"></i> <a href="https://uhs.berkeley.edu/how-stay-safe-while-protesting-during-pandemic">Pandemic Protesting</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="https://secretary.yale.edu/student-life/staying-safe-and-healthy-public-demonstration-or-march">Staying Safe at an Event</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="https://www.amnestyusa.org/pdfs/SafeyDuringProtest_F.pdf">Being Careful at Events</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="https://www.redcross.org/get-help/how-to-prepare-for-emergencies/types-of-emergencies/coronavirus-safety.html">COVID Safety Tips</a></li>
+            </ul>
           </div>
 
         </div>
       </div>
     </div>
 
-    <div class="container py-4">
-      <div class="copyright">
-        &copy; Copyright <strong><span>ProtestFind</span></strong>. All Rights Reserved
-      </div>
-    </div>
   </footer>
 
   <div id="preloader"></div>
